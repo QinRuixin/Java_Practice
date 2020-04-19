@@ -1,4 +1,4 @@
-package algorithm4.ch1_foundation;
+package algorithm4.ch1_foundation.section1;
 
 import edu.princeton.cs.algs4.StdIn;
 

@@ -1,11 +1,11 @@
-package algorithm4.ch1_foundation;
+package algorithm4.ch1_foundation.section2;
 
-public class CloneTest implements Cloneable{
+public class CloneDemo implements Cloneable{
 //    @Override
 //    protected Object clone() throws CloneNotSupportedException {
 //     //深拷贝进一步操作
-//        CloneTest clonea = null;
-//        clonea = (CloneTest) super.clone();
+//        CloneDemo clonea = null;
+//        clonea = (CloneDemo) super.clone();
 //        return clonea;
 //    }
 
@@ -18,13 +18,13 @@ public class CloneTest implements Cloneable{
         }
     }
     public static void main(String[] args) {
-        CloneTest clone1 = new CloneTest();
+        CloneDemo clone1 = new CloneDemo();
         clone1.count = 2;
-        CloneTest clone2 = clone1;
+        CloneDemo clone2 = clone1;
         clone2.count = 3;
         System.out.println(clone1.count);
         try {
-            CloneTest clone3 = (CloneTest)clone1.clone();
+            CloneDemo clone3 = (CloneDemo)clone1.clone();
             clone3.count = 4;
             System.out.println(clone1.count);
         } catch (CloneNotSupportedException e) {

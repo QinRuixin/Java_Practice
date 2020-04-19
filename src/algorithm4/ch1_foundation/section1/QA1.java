@@ -1,4 +1,4 @@
-package algorithm4.ch1_foundation;
+package algorithm4.ch1_foundation.section1;
 
 public class QA1 {
     public static void main(String[] args) {

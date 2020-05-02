@@ -1,6 +1,6 @@
-package lambdaDemo;
+package orther.lambdaDemo;
 
-import lambdaDemo.compare.StringOrder;
+import orther.lambdaDemo.compare.StringOrder;
 
 import java.util.Arrays;
 import java.util.Comparator;

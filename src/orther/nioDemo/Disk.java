@@ -1,4 +1,4 @@
-package nioDemo;
+package orther.nioDemo;
 
 import java.io.IOException;
 import java.nio.file.*;

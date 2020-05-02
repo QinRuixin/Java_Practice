@@ -1,4 +1,4 @@
-package lambdaDemo.compare;
+package orther.lambdaDemo.compare;
 
 public class StringOrder {
     public static int byLength(String s1, String s2){

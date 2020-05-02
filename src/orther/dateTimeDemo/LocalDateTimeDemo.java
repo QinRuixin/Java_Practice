@@ -1,13 +1,8 @@
-package dateTimeDemo;
+package orther.dateTimeDemo;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-
-import static java.lang.System.currentTimeMillis;
 
 /**
  * @author qin

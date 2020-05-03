@@ -1,4 +1,4 @@
-package algorithm4.ch2;
+package algorithm4.ch2.section1;
 
 import java.util.Comparator;
 

@@ -1,76 +1,57 @@
-package algorithm4.ch2;
+package algorithm4.ch2.section1;
 
 import java.util.Comparator;
 
 /**
- * 选择排序
- * 特点：
- * 1. 稳定              // 5^ 4 5 2 1
- * <p>
- * 复杂度分析：
- * 最好情况：O(N)     // 比较 N - 1 次
- * 最坏情况：O(N^2)     // 比较 N^2 / 2 次
- * 平均情况：O(N^2)     // 比较 N^2 / 4 次
+ * 希尔排序
+ * 思想是使数组中任意间隔为 h 的元素都是有序的，即得到 h 有序数组
+ *
+ * 每次利用插入排序完成
+ *
+ * 以下实现使用序列 1/2 * (3^k - 1)
+ *
+ * 复杂度 O(N^1.5)
  *
  * @author qin
- * @date 2020-05-02
+ * @date 2020-05-03
  */
-public class Insertion {
-    private Insertion() {
+public class Shell {
+
+    private Shell() {
     } // 避免被实例化
 
 
     private static void sort(Comparable[] a) {
         int N = a.length;
-        int exchanges = 0;
-        // 将最小的元素作为哨兵置于最左边
-        for (int i = N - 1; i > 0; i--) {
-            if (less(a[i], a[i - 1])) {
-                exch(a, i, i - 1);
-                ++exchanges;
+        int h = 1;
+        while (h < N / 3) h = 3 * h + 1;   // 1, 4, 13, 40, 121, 364, 1093 ...
+
+        while (h >= 1) {
+            for (int i = h; i < N; i++) {
+                // 从 h 位置开始 一个个向后扫， 前 h-1 个可能被交换
+                for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
+                    exch(a, j, j - h);
+                }
             }
-        }
-        if(exchanges==0){
-            return;
-        }
-        // 前两个已有序
-        for (int i = 2; i < N; i++) {
-            Comparable v = a[i];
-            int j = i;
-            while (less(v, a[j-1])){
-                a[j] = a[j-1];
-                j--;
-            }
-            a[j] = v;
+            h /= 3;
         }
 
-        assert isSorted(a);
     }
 
     private static void sort(Object[] a, Comparator comparator) {
         int N = a.length;
-        int exchanges = 0;
-        // 将最小的元素作为哨兵置于最左边
-        for (int i = N - 1; i > 0; i--) {
-            if (less(a[i], a[i - 1],comparator)) {
-                exch(a, i, i - 1);
-                ++exchanges;
-            }
-        }
-        if(exchanges==0){
-            return;
-        }
-        // 前两个已有序
-        for (int i = 2; i < N; i++) {
-            Object v = a[i];
-            int j = i;
-            while (less(v, a[j-1],comparator)){
-                a[j] = a[j-1];
-                j--;
-            }
-            a[j] = v;
-        }
+        int h = 1;
+        while (h < N / 3) h = 3 * h + 1;   // 1, 4, 13, 40, 121, 364, 1093 ...
 
+        while (h >= 1) {
+            for (int i = h; i < N; i++) {
+                // 从 h 位置开始 一个个向后扫， 前 h-1 个可能被交换
+                for (int j = i; j >= h && less(a[h], a[j - h],comparator); j -= h) {
+                    exch(a, h, j - h);
+                }
+            }
+            h /= 3;
+        }
 //        assert isSorted(a,comparator);
     }
 
@@ -121,5 +102,6 @@ public class Insertion {
         assert isSorted(a);
         show(a);
     }
+
 
 }

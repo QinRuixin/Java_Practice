@@ -20,7 +20,7 @@ public class Insertion {
     } // 避免被实例化
 
 
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         int N = a.length;
         int exchanges = 0;
         // 将最小的元素作为哨兵置于最左边

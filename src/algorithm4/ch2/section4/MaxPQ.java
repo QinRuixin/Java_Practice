@@ -1,4 +1,4 @@
-package algorithm4.ch2.section2.priority_queue;
+package algorithm4.ch2.section4;
 
 /**
  * @author qin

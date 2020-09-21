@@ -11,3 +11,4 @@ public class RuntimeConstantPoolOOM2 {
     }
 }
 
+// jdk7 之后 Java 字符串常量池移动到了堆   结果为   true  false    第二个 非首次出现

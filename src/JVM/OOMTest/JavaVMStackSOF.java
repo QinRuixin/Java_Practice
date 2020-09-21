@@ -24,3 +24,9 @@ public class JavaVMStackSOF {
     }
 }
 
+// stack length:18727
+// Exception in thread "main" java.lang.StackOverflowError
+
+// 设置 128k 之后
+// stack length:981
+// Exception in thread "main" java.lang.StackOverflowError

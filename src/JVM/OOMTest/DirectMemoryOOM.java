@@ -6,6 +6,9 @@ import java.lang.reflect.Field;
 
 /**
  * VM Args：-Xmx20M -XX:MaxDirectMemorySize=10M
+ *
+ * 能正常运行
+ *
  * @author zzm
  */
 public class DirectMemoryOOM {

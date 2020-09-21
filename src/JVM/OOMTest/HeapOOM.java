@@ -27,3 +27,5 @@ Dumping heap to java_pid11960.hprof ...
 Heap dump file created [28250461 bytes in 0.118 secs]
 Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
  */
+
+// hprof文件可使用 jhat  java heap analyze tool 查看

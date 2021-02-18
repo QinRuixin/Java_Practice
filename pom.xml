@@ -42,6 +42,13 @@
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>1.23</version>
         </dependency>
+
+        <dependency>
+            <groupId>edu.princeton.cs</groupId>
+            <artifactId>algs4</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/algs4.jar</systemPath>
+        </dependency>
     </dependencies>
 
 </project>

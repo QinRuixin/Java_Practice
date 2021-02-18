@@ -1,0 +1,45 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   Action.java
+
+package orther.enumDemo;
+
+// 反编译后的文件
+public final class Action extends Enum
+{
+
+    public static Action[] values()
+    {
+        return (Action[])$VALUES.clone();
+    }
+
+    public static Action valueOf(String s)
+    {
+        return (Action)Enum.valueOf(orther/enumDemo/Action, s);
+    }
+
+    private Action(String s, int i) // 构造函数为 private 只有在Action类中才可以实例化
+    {
+        super(s, i);
+    }
+
+    public static final Action STOP;
+    public static final Action RIGHT;
+    public static final Action LEFT;
+    public static final Action UP;
+    public static final Action DOWN;
+    private static final Action $VALUES[];
+// 列举的 STOP, RIGHT, LEFT, UP, DOWN 常数 实际上是public static final ，且为Action实例
+    static 
+    {
+        STOP = new Action("STOP", 0);
+        RIGHT = new Action("RIGHT", 1);
+        LEFT = new Action("LEFT", 2);
+        UP = new Action("UP", 3);
+        DOWN = new Action("DOWN", 4);
+        $VALUES = (new Action[] {
+            STOP, RIGHT, LEFT, UP, DOWN
+        });
+    }
+}

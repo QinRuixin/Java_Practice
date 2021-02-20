@@ -6,7 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author qin
- * @description todo
+ * @description 锁消除测试  打成 jar 包后
+ *  java -jar ....jar
+ *  java -XX:-EliminateLocks -jar ....jar
+ *  对比是否开启锁消除的性能
  * @date 2021-02-18
  */
 

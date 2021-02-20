@@ -2,7 +2,7 @@ package concurrency.performance.interrupt;
 
 /**
  * @author qin
- * @description todo
+ * @description 两阶段终止 测试
  * @date 2021-02-17
  */
 public class TwoPhaseTerminationTest {

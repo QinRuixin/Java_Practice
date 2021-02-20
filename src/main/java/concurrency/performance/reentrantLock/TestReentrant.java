@@ -1,4 +1,4 @@
-package concurrency.performance;
+package concurrency.performance.reentrantLock;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author qin
- * @description todo
+ * @description ReentrantLock 实例
  * @date 2021-02-20
  */
 

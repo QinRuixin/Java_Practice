@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @author qin
- * @description todo
+ * @description PerformanceTestTool using CountDownLatch
  * @date 2021-02-17
  */
 public class PerformanceTestTool {

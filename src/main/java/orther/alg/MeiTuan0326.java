@@ -60,6 +60,27 @@ public class MeiTuan0326 {
         return res;
     }
 
+    public static int countDownLatchMethod(int[] a, int[] b, int[] c){
+        CountDownLatch countDownLatch = new CountDownLatch(3);
+        CalcSumCountDownLatch cs1 = new CalcSumCountDownLatch(a,countDownLatch);
+        CalcSumCountDownLatch cs2 = new CalcSumCountDownLatch(b,countDownLatch);
+        CalcSumCountDownLatch cs3 = new CalcSumCountDownLatch(c,countDownLatch);
+        Thread t1 = new Thread(cs1);
+        Thread t2 = new Thread(cs2);
+        Thread t3 = new Thread(cs3);
+        t1.run();
+        t2.run();
+        t3.run();
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        int res = cs1.getSum() + cs2.getSum() + cs3.getSum();
+//        System.out.println(res);
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] a = {1,2,3,5};
         int[] b = {2,3,5};
@@ -67,7 +88,7 @@ public class MeiTuan0326 {
 
         System.out.println(calcSum(a,b,c));
         System.out.println(threadPoolMethod(a,b,c));
-
+        System.out.println(countDownLatchMethod(a,b,c));
     }
 }
 
@@ -102,6 +123,29 @@ class CalcSumRunnable implements Runnable{
         for (int i = 0; i < curList.length; i++) {
             sum += curList[i];
         }
+    }
+
+    public int getSum() {
+        return sum;
+    }
+}
+
+class CalcSumCountDownLatch implements Runnable{
+    private int sum;
+    private int[] curList;
+    private CountDownLatch countDownLatch;
+
+    CalcSumCountDownLatch(int[] numList, CountDownLatch c){
+        curList = numList;
+        countDownLatch = c;
+    }
+
+    @Override
+    public void run(){
+        for (int i = 0; i < curList.length; i++) {
+            sum += curList[i];
+        }
+        countDownLatch.countDown();
     }
 
     public int getSum() {

@@ -7,7 +7,7 @@ package orther.alg;
  */
 public class SingletonDemo {
 
-    private static SingletonDemo instance;
+    private volatile static SingletonDemo instance;
 
     private SingletonDemo(){}
 

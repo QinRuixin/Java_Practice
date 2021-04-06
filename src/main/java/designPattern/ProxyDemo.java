@@ -1,6 +1,4 @@
-package orther.designPattern;
-
-import orther.proxyDemo.RealObject;
+package designPattern;
 
 /**
  * @author qin

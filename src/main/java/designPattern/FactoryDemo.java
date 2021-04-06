@@ -1,4 +1,4 @@
-package orther.designPattern;
+package designPattern;
 
 /**
  * @author qin

@@ -1,0 +1,12 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+
+file:
+  path:
+    code: "E:\\4_work_dir\\source-code\\"
+    report: "E:\\4_work_dir\\report\\"
+    python-cache: "E:\\4_work_dir\\python-cache\\"

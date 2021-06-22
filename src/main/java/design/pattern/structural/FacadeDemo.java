@@ -1,4 +1,4 @@
-package design.pattern;
+package design.pattern.structural;
 
 /**
  * @author qin

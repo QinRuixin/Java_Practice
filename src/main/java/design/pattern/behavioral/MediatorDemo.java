@@ -1,4 +1,4 @@
-package design.pattern.creational;
+package design.pattern.behavioral;
 
 import java.util.ArrayList;
 
